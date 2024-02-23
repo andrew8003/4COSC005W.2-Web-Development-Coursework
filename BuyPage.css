@@ -1,0 +1,50 @@
+input{
+        box-shadow:0 0 10px black;
+        border-radius: 10px;
+        width: 100px;
+        height: 30px;}
+body {
+    background-color:grey;
+    margin: 0;
+    font-family: Arial;}
+.img{
+    width: auto;
+    height: 500px;} 
+.img2{
+    margin-left: 20px;}
+fieldset{
+    box-shadow:0 0 20px black;
+    border-radius: 20px;
+    border-width: 4px;
+    border-color: black;
+    text-align: center; 
+    background-color: white;
+    height: 720px;
+    width: 350px;}
+    
+h1{
+    text-align: center;}
+a{
+    text-decoration: solid;
+    text-align: center;
+    display: inline;}
+* {
+    box-sizing: border-box;}
+
+.box {
+    margin-left: 50px;
+    margin-right: 50px;
+    float:left;
+    width: 350px;
+    padding: 50px;}
+.leftalign{
+    text-align: left;
+    position:fixed;
+    bottom: 0;
+    padding: 10px;}
+.rightalign{
+    text-align: left;
+    position:fixed;
+    bottom: 0;
+    padding: 10px;
+    margin-bottom: 150px;}

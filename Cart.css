@@ -1,0 +1,98 @@
+body {
+    background-color:grey;
+    margin: 0;
+    font-family: Arial;}
+h1{
+    text-align: center;}
+.fieldsetmain{
+    float:none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 870px;
+    height: auto;
+    box-shadow:0 0 20px black;
+    border-radius: 20px;
+    border-width: 4px;
+    border-color: black;
+    background-color: white;}
+input{
+    border-radius: 10px;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    box-shadow:0 0 10px black;}
+.rightalign{
+    text-align: right;}
+a{
+   padding: 10px;}
+.fieldset1{
+    border: 0;
+    width: 300px;
+    text-align: center;
+    height: 20px;
+}
+.fieldset2{
+    border: 0;
+    width: 250px;
+    text-align: center;
+    height: 20px;
+}
+.fieldset3{
+    border: 0;
+    width: 80px;
+    text-align: center;
+    height: 20px;
+}
+.fieldset4{
+    text-align: center;
+    border: 0;
+    width: 60px;
+    height: 20px;
+}
+.fieldset5{
+    border: 0;
+    text-align: center;
+    width: 820px;
+}
+.fieldset6{
+    border-color: grey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border-width: 2px;
+    width: 820px;
+}
+fieldset{
+    float: left;
+}
+.checkout{
+    background-color: yellow;
+    width: 150px;
+    height: 50px;
+}
+.fieldset7{
+    margin-top: 15px;
+    text-align: center;
+    width: 30px;
+    height: auto;
+    border: 0;
+}
+.input2{
+    width: 200px;
+    box-shadow: none;
+    text-align: center;
+}
+.printbutt{
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+.fieldset8{
+    border-color: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border: 0;
+    width: 820px;
+}

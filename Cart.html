@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cart</title>
+        <link rel="stylesheet" type="text/css" href="/Cart.css">
+        <link rel="stylesheet" type="text/css" href="/navBar.css">
+    </head>
+    <body>
+            <div class="topnav">
+                <h1>
+                <a href="PresentationPage.html">PresentationPage</a>   
+                <a href="MainPage.html">Home</a>
+                <a href="BuyPage.html">Store</a>
+                </h1>
+            </div> 
+
+        <!--Clear localstorage button, helps with testing or if errors happen to wipe out stored item quantities-->    
+        <!--<button id="clearLocalStorage">Clear LocalStorage</button>
+        <script>
+            clearLocalStorage.onclick = function(){
+                localStorage.clear();
+            }
+        </script>
+    -->
+        <!--Forces quantity number and all prices to update, without numbers stay at 0 until add or remove button is pressed in cart-->
+        <script>
+            function updatequantities(){
+            var dispaly1 = document.getElementById("display1");
+            dispaly1.innerHTML = count1;
+            var dispaly2 = document.getElementById("display2");
+            dispaly2.innerHTML = count2;
+            var dispaly3 = document.getElementById("display3");
+            dispaly3.innerHTML = count3;
+            var dispaly4 = document.getElementById("display4");
+            dispaly4.innerHTML = count4;
+            var dispaly5 = document.getElementById("display5");
+            dispaly5.innerHTML = count5;
+            var dispaly6 = document.getElementById("display6");
+            dispaly6.innerHTML = count6;
+            var dispaly7 = document.getElementById("display7");
+            dispaly7.innerHTML = count7;
+            var dispaly8 = document.getElementById("display8");
+            dispaly8.innerHTML = count8;
+            var totalPrice1 = document.getElementById("totalPrice1");
+            total1 = count1 * 21.99;
+                    total1=total1.toFixed(2);
+                    totalPrice1.innerHTML = total1;
+                    finaltotal1();
+                    localStorage.setItem("Item1Total",total1);
+            var totalPrice2 = document.getElementById("totalPrice2");
+            total2 = count2 * 7.99;
+                    total2=total2.toFixed(2);
+                    totalPrice2.innerHTML = total2;
+                    finaltotal1();
+                    localStorage.setItem("Item2Total",total2);
+            var totalPrice3 = document.getElementById("totalPrice3");
+            total3 = count3 * 10.00;
+                    total3=total3.toFixed(2);
+                    totalPrice3.innerHTML = total3;
+                    finaltotal1();
+                    localStorage.setItem("Item3Total",total3);
+            var totalPrice4 = document.getElementById("totalPrice4");
+            total4 = count4 * 24.99;
+                    total4=total4.toFixed(2);
+                    totalPrice4.innerHTML = total4;
+                    finaltotal1();
+                    localStorage.setItem("Item4Total",total4);
+            var totalPrice5 = document.getElementById("totalPrice5");
+            total5 = count5 * 17.99;
+                    total5=total5.toFixed(2);
+                    totalPrice5.innerHTML = total5;
+                    finaltotal1();
+                    localStorage.setItem("Item5Total",total5);
+            var totalPrice6 = document.getElementById("totalPrice6");
+            total6 = count6 * 9.99;
+                    total6=total6.toFixed(2);
+                    totalPrice6.innerHTML = total6;
+                    finaltotal1();
+                    localStorage.setItem("Item6Total",total6);
+            var totalPrice7 = document.getElementById("totalPrice7");
+            total7 = count7 * 20.00;
+                    total7=total7.toFixed(2);
+                    totalPrice7.innerHTML = total7;
+                    finaltotal1();
+                    localStorage.setItem("Item7Total",total7);
+            var totalPrice8 = document.getElementById("totalPrice8");
+            total8 = count8 * 8.99;
+                    total8=total8.toFixed(2);
+                    totalPrice8.innerHTML = total8;
+                    finaltotal1();
+                    localStorage.setItem("Item8Total",total8);
+            }   
+            window.onload = updatequantities;
+            </script>
+        <fieldset class="fieldsetmain">
+            <div class="box" >
+                <fieldset class="fieldset8">
+                    <fieldset class="fieldset1">
+                        <p><b>Product</b></p>
+                    </fieldset>
+                    <fieldset class="fieldset2">
+                        <p><b>Quantity</b></p>
+                    </fieldset>
+                    <fieldset class="fieldset3">
+                        <p><b>Price</b></p>
+                    </fieldset>
+                    <fieldset class="fieldset4">
+                        <p><b>Total</b></p>
+                    </fieldset>
+                </fieldset>
+                <br>
+            <fieldset class="fieldset6">
+                <fieldset class="fieldset1">
+                    <div id="name1">No Time To Die</div>
+                </fieldset>
+
+                <fieldset class="fieldset2">
+                    <input id="button1" type="button" value="Add 1">
+                    <b><span id="display1">0</span></b>
+                    <input id="button1rem" type="button" value="Remove 1">
+                </fieldset>
+
+                <fieldset class="fieldset3">
+                    <a id="item1price">£21.99</a>
+                </fieldset>
+                <fieldset class="fieldset4">
+                    £<span id="totalPrice1">0</span>
+                </fieldset>
+                <script>
+                    var count1 = localStorage.getItem("item1");
+                    var button1 = document.getElementById("button1");
+                    var button1rem = document.getElementById("button1rem");
+                    var dispaly1 = document.getElementById("display1");
+                    var totalPrice1 = document.getElementById("totalPrice1");
+                    var total1 = 0;
+
+                    button1.onclick = function () {
+                        count1++;   
+                        dispaly1.innerHTML = count1;
+                        localStorage.setItem("item1",count1);
+                        total1 = count1 * 21.99;
+                        total1=total1.toFixed(2);
+                        totalPrice1.innerHTML = total1;
+                        finaltotal1();
+                        localStorage.setItem("Item1Total",total1);
+                    }
+                    button1rem.onclick = function () {
+                        if(count1 > 0){
+                            button1rem.onclick = function () {
+                            count1--;
+                            display1.innerHTML = count1;
+                            console.log(count1);
+                            localStorage.setItem("item1",count1);
+                            total1 = count1 * 21.99;
+                            total1=total1.toFixed(2);
+                            totalPrice1.innerHTML = total1;
+                            finaltotal1();
+                            localStorage.setItem("Item1Total",total1);
+                            }
+                        }else
+                             alert("Cart Is Empty")
+                        }
+                </script>
+            </fieldset>
+            <br>
+            <fieldset class="fieldset6">
+                <fieldset class="fieldset1">
+                    <div id="name2">Ghostbusters Afterlife</div>
+                </fieldset>
+
+                <fieldset class="fieldset2">
+                    <input id="button2" type="button" value="Add 1">
+                    <b><span id="display2">0</span></b>
+                    <input id="button2rem" type="button" value="Remove 1">
+                </fieldset>
+
+                <fieldset class="fieldset3">
+                    <a id="item2price">£7.99</a>
+                </fieldset>
+                <fieldset class="fieldset4">
+                    £<span id="totalPrice2">0</span>
+                </fieldset>
+                <script>
+                    var count2 = localStorage.getItem("item2");
+                    var button2 = document.getElementById("button2");
+                    var button2rem = document.getElementById("button2rem");
+                    var dispaly2 = document.getElementById("display2");
+                    var totalPrice2 = document.getElementById("totalPrice2");
+                    var total2 = 0;
+                
+                    button2.onclick = function () {
+                        count2++;   
+                        dispaly2.innerHTML = count2;
+                        localStorage.setItem("item2",count2);
+                        total2 = count2 * 7.99;
+                        total2=total2.toFixed(2);
+                        totalPrice2.innerHTML = total2;
+                        finaltotal1();
+                        localStorage.setItem("Item2Total",total2);
+                    }
+                    button2rem.onclick = function () {
+                        if(count2 > 0){
+                            button2rem.onclick = function () {
+                            count2--;
+                            display2.innerHTML = count2;
+                            console.log(count2);
+                            localStorage.setItem("item2",count2);
+                            total2 = count2 * 7.99;
+                            total2=total2.toFixed(2);
+                            totalPrice2.innerHTML = total2;
+                            finaltotal1();
+                            localStorage.setItem("Item2Total",total2);
+                            }
+                        }else
+                                alert("Cart Is Empty")
+                        }
+                </script>
+                </fieldset>
+                <br>
+                    <fieldset class="fieldset6">
+                        <fieldset class="fieldset1">
+                            <div id="name3">Harry Potter and the Philosophers Stone</div>
+                        </fieldset>
+        
+                        <fieldset class="fieldset2">
+                            <input id="button3" type="button" value="Add 1">
+                            <b><span id="display3">0</span></b>
+                            <input id="button3rem" type="button" value="Remove 1">
+                        </fieldset>
+        
+                        <fieldset class="fieldset3">
+                            <a id="item3price">£10</a>
+                        </fieldset>
+                        <fieldset class="fieldset4">
+                            £<span id="totalPrice3">0</span>
+                        </fieldset>
+                        <script>
+                            var count3 = localStorage.getItem("item3");
+                            var button3 = document.getElementById("button3");
+                            var button3rem = document.getElementById("button3rem");
+                            var dispaly3 = document.getElementById("display3");
+                            var totalPrice3 = document.getElementById("totalPrice3");
+                            var total3 = 0;
+                      
+                            button3.onclick = function () {
+                                count3++;   
+                                dispaly3.innerHTML = count3;
+                                localStorage.setItem("item3",count3);
+                                total3 = count3 * 10.00;
+                                total3=total3.toFixed(2);
+                                totalPrice3.innerHTML = total3;
+                                finaltotal1();
+                                localStorage.setItem("Item3Total",total3);
+                            }
+                            button3rem.onclick = function () {
+                                if(count3 > 0){
+                                    button3rem.onclick = function () {
+                                    count3--;
+                                    display3.innerHTML = count3;
+                                    console.log(count3);
+                                    localStorage.setItem("item3",count3);
+                                    total3 = count3 * 10.00;
+                                    total3=total3.toFixed(2);
+                                    totalPrice3.innerHTML = total3;
+                                    finaltotal1();
+                                    localStorage.setItem("Item3Total",total3);
+                                    }
+                                }else
+                                     alert("Cart Is Empty")
+                                }
+                        </script>
+                    </fieldset>
+                    <br>
+                <fieldset class="fieldset6">
+                    <fieldset class="fieldset1">
+                        <div id="name4">Dune</div>
+                    </fieldset>
+    
+                    <fieldset class="fieldset2">
+                        <input id="button4" type="button" value="Add 1">
+                        <b><span id="display4">0</span></b>
+                        <input id="button4rem" type="button" value="Remove 1">
+                    </fieldset>
+    
+                    <fieldset class="fieldset3">
+                        <a id="item4price">£24.99</a>
+                    </fieldset>
+                    <fieldset class="fieldset4">
+                        £<span id="totalPrice4">0</span>
+                    </fieldset>
+                    <script>
+                        var count4 = localStorage.getItem("item4");
+                        var button4 = document.getElementById("button4");
+                        var button4rem = document.getElementById("button4rem");
+                        var dispaly4 = document.getElementById("display4");
+                        var totalPrice4 = document.getElementById("totalPrice4");
+                        var total4 = 0;
+                    
+                        button4.onclick = function () {
+                            count4++;   
+                            dispaly4.innerHTML = count4;
+                            localStorage.setItem("item4",count4);
+                            total4 = count4 * 24.99;
+                            total4=total4.toFixed(2);
+                            totalPrice4.innerHTML = total4;
+                            finaltotal1();
+                            localStorage.setItem("Item4Total",total4);
+                        }
+                        button4rem.onclick = function () {
+                            if(count4 > 0){
+                                button4rem.onclick = function () {
+                                count4--;
+                                display4.innerHTML = count4;
+                                console.log(count4);
+                                localStorage.setItem("item4",count4);
+                                total4 = count4 * 24.99;
+                                total4=total4.toFixed(2);
+                                totalPrice4.innerHTML = total4;
+                                finaltotal1();
+                                localStorage.setItem("Item4Total",total4);
+                                }
+                            }else
+                                    alert("Cart Is Empty")
+                            }
+                    </script>
+                </fieldset>
+                <br>
+                <fieldset class="fieldset6">
+                    <fieldset class="fieldset1">
+                        <div id="name5">The Kings Man</div>
+                    </fieldset>
+
+                    <fieldset class="fieldset2">
+                        <input id="button5" type="button" value="Add 1">
+                        <b><span id="display5">0</span></b>
+                        <input id="button5rem" type="button" value="Remove 1">
+                    </fieldset>
+
+                    <fieldset class="fieldset3">
+                        <a id="item5price">£17.99</a>
+                    </fieldset>
+                    <fieldset class="fieldset4">
+                        £<span id="totalPrice5">0</span>
+                    </fieldset>
+                    <script>
+                        var count5 = localStorage.getItem("item5");
+                        var button5 = document.getElementById("button5");
+                        var button5rem = document.getElementById("button5rem");
+                        var dispaly5 = document.getElementById("display5");
+                        var totalPrice5 = document.getElementById("totalPrice5");
+                        var total5 = 0;
+                    
+                        button5.onclick = function () {
+                            count5++;   
+                            dispaly5.innerHTML = count5;
+                            localStorage.setItem("item5",count5);
+                            total5 = count5 * 17.99;
+                            total5=total5.toFixed(2);
+                            totalPrice5.innerHTML = total5;
+                            finaltotal1();
+                            localStorage.setItem("Item5Total",total5);
+                        }
+                        button5rem.onclick = function () {
+                            if(count5 > 0){
+                                button5rem.onclick = function () {
+                                count5--;
+                                display5.innerHTML = count5;
+                                console.log(count5);
+                                localStorage.setItem("item5",count5);
+                                total5 = count5 * 17.99;
+                                total5=total5.toFixed(2);
+                                totalPrice5.innerHTML = total5;
+                                finaltotal1();
+                                localStorage.setItem("Item5Total",total5);
+                                }
+                            }else
+                                    alert("Cart Is Empty")
+                            }
+                    </script>
+                </fieldset>
+                <br>
+                <fieldset class="fieldset6">
+                    <fieldset class="fieldset1">
+                        <div id="name6">The Suicide Squad</div>
+                    </fieldset>
+    
+                    <fieldset class="fieldset2">
+                        <input id="button6" type="button" value="Add 1">
+                        <b><span id="display6">0</span></b>
+                        <input id="button6rem" type="button" value="Remove 1">
+                    </fieldset>
+    
+                    <fieldset class="fieldset3">
+                        <a id="item6price">£9.99</a>
+                    </fieldset>
+                    <fieldset class="fieldset4">
+                        £<span id="totalPrice6">0</span>
+                    </fieldset>
+                    <script>
+                        var count6 = localStorage.getItem("item6");
+                        var button6 = document.getElementById("button6");
+                        var button6rem = document.getElementById("button6rem");
+                        var dispaly6 = document.getElementById("display6");
+                        var totalPrice6 = document.getElementById("totalPrice6");
+                        var total6 = 0;
+                    
+                        button6.onclick = function () {
+                            count6++;   
+                            dispaly6.innerHTML = count6;
+                            localStorage.setItem("item6",count6);
+                            total6 = count6 * 9.99;
+                            total6=total6.toFixed(2);
+                            totalPrice6.innerHTML = total6;
+                            finaltotal1();
+                            localStorage.setItem("Item6Total",total6);
+                        }
+                        button6rem.onclick = function () {
+                            if(count6 > 0){
+                                button6rem.onclick = function () {
+                                count6--;
+                                display6.innerHTML = count6;
+                                console.log(count6);
+                                localStorage.setItem("item6",count6);
+                                total6 = count6 * 9.99;
+                                total6=total6.toFixed(2);
+                                totalPrice6.innerHTML = total6;
+                                finaltotal1();
+                                localStorage.setItem("Item6Total",total6);
+                                }
+                            }else
+                                    alert("Cart Is Empty")
+                            }
+                    </script>
+                </fieldset>
+                <br>
+                <fieldset class="fieldset6">
+                    <fieldset class="fieldset1">
+                        <div id="name7">Spiderman No Way Home</div>
+                    </fieldset>
+    
+                    <fieldset class="fieldset2">
+                        <input id="button7" type="button" value="Add 1">
+                        <b><span id="display7">0</span></b>
+                        <input id="button7rem" type="button" value="Remove 1">
+                    </fieldset>
+    
+                    <fieldset class="fieldset3">
+                        <a id="item7price">£20</a>
+                    </fieldset>
+                    <fieldset class="fieldset4">
+                        £<span id="totalPrice7">0</span>
+                    </fieldset>
+                    <script>
+                        var count7 = localStorage.getItem("item7");
+                        var button7 = document.getElementById("button7");
+                        var button7rem = document.getElementById("button7rem");
+                        var dispaly7 = document.getElementById("display7");
+                        var totalPrice7 = document.getElementById("totalPrice7");
+                        var total7 = 0;
+                    
+                        button7.onclick = function () {
+                            count7++;   
+                            dispaly7.innerHTML = count7;
+                            localStorage.setItem("item7",count7);
+                            total7 = count7 * 20.00;
+                            total7=total7.toFixed(2);
+                            totalPrice7.innerHTML = total7;
+                            finaltotal1();
+                            localStorage.setItem("Item7Total",total7);
+                        }
+                        button7rem.onclick = function () {
+                            if(count7 > 0){
+                                button7rem.onclick = function () {
+                                count7--;
+                                display7.innerHTML = count7;
+                                console.log(count7);
+                                localStorage.setItem("item7",count7);
+                                total7 = count7 * 20.00;
+                                total7=total7.toFixed(2);
+                                totalPrice7.innerHTML = total7;
+                                finaltotal1();
+                                localStorage.setItem("Item7Total",total7);
+                                }
+                            }else
+                                    alert("Cart Is Empty")
+                            }
+                    </script>
+                </fieldset>
+                <br>
+                <fieldset class="fieldset6">
+                    <fieldset class="fieldset1">
+                        <div id="name8">Onward</div>
+                    </fieldset>
+    
+                    <fieldset class="fieldset2">
+                        <input id="button8" type="button" value="Add 1">
+                        <b><span id="display8">0</span></b>
+                        <input id="button8rem" type="button" value="Remove 1">
+                    </fieldset>
+    
+                    <fieldset class="fieldset3">
+                        <a id="item8price">£8.99</a>
+                    </fieldset>
+                    <fieldset class="fieldset4">
+                        £<span id="totalPrice8">0</span>
+                    </fieldset>
+                    <script>
+                        var count8 = localStorage.getItem("item8");
+                        var button8 = document.getElementById("button8");
+                        var button8rem = document.getElementById("button8rem");
+                        var dispaly8 = document.getElementById("display8");
+                        var totalPrice8 = document.getElementById("totalPrice8");
+                        var total8 = 0;
+                        button8.onclick = function () {
+                            count8++;   
+                            dispaly8.innerHTML = count8;
+                            localStorage.setItem("item8",count8);
+                            total8 = count8 * 8.99;
+                            total8=total8.toFixed(2);
+                            totalPrice8.innerHTML = total8;
+                            finaltotal1();
+                            localStorage.setItem("Item8Total",total8);
+                        }
+                        button8rem.onclick = function () {
+                            if(count8 > 0){
+                                button8rem.onclick = function () {
+                                count8--;
+                                display8.innerHTML = count8;
+                                console.log(count8);
+                                localStorage.setItem("item8",count8);
+                                total8 = count8 * 8.99;
+                                total8=total8.toFixed(2);
+                                totalPrice8.innerHTML = total8;
+                                finaltotal1();
+                                localStorage.setItem("Item8Total",total8);
+                                }
+                            }else
+                                    alert("Cart Is Empty")
+                            }
+                    </script>
+
+                </fieldset>
+                <br>
+                <fieldset class="fieldset6">
+                    <fieldset class="fieldset7">
+                    <form name="cartForm">
+                        <label for="firstname">First Name : </label>
+                        <input id="firstname" class="input2" type="text" name="firstname">
+                        <label for="surName">Surname : </label>
+                        <input id="surName" class="input2" type="text" name="surname">
+                        <label for="postcode">Postcode : </label>
+                        <input id="postcode" class="input2" type="text" name="postcode">
+                        <label for="telephone">Tel# : </label>
+                        <input id="telephone" class="input2" type="text" name="telephone">
+                        <br>
+
+                    </form>
+                    </fieldset>
+                    <script>
+                        
+                    </script>
+                    <p class="fieldset5">
+                        <button id="checkoutBut" class="checkout" >Checkout</button>
+                        <b>Total : £<span id="finalTotal">0</span></b>
+                    </p>
+                </fieldset>
+
+
+                <script>
+                document.getElementById("checkoutBut").onclick = function () {
+                    //adapted version of https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_validation_empty_input
+                    var a = document.forms["cartForm"]["firstname"].value;
+                    var b = document.forms["cartForm"]["surname"].value;
+                    var c = document.forms["cartForm"]["postcode"].value;
+                    var d = document.forms["cartForm"]["telephone"].value;
+                    if(a==""||a==null,b==""||b==null,c==""||c==null,d==""||d==null){
+                        alert("Fill Out All Form Sections")
+                        console.log("check firstname")
+                    }else{
+                        console.log("saving empty")
+                        let firstname,surname,postcode,telephone;
+                        firstname=document.getElementById("firstname");
+                        surname=document.getElementById("surname");
+                        postcode=document.getElementById("postcode");
+                        telephone=document.getElementById("telephone");
+
+                        localStorage.setItem("firstname", a)
+                        localStorage.setItem("surname", b)
+                        localStorage.setItem("postcode", c)
+                        localStorage.setItem("telephone", d)
+                        //location.href = "https://w1816963.users.ecs.westminster.ac.uk/Coursework/invoice";
+                        location.href = "invoice.html";
+
+                    }    
+                }
+                </script>
+
+
+                <!--Saves and displays total of all items every time each individual item quantity is updated-->
+                <script>
+                    var finalTotal = document.getElementById("finalTotal");
+                    var fTotal = 0;
+                    
+                    function finaltotal1(){
+                        console.log("running")
+                        fTotal = (count8*8.99)+(count7*20.00)+(count6*9.99)+(count5*17.99)+(count4*24.99)+(count3*10.00)+(count2*7.99)+(count1*21.99);
+                        fTotal=fTotal.toFixed(2);
+                        finalTotal.innerHTML = fTotal;
+                        localStorage.setItem("orderTotal",fTotal);
+                    }
+                </script>
+
+        </div>
+        </fieldset>
+        <div>    
+            <b><a href="/editor.html"> Editor Page </a></b>
+        </div>
+    </body>
+</html>
